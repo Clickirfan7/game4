@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Your existing styles for the service cards and business card */
+    /* ... */
+
+    /* Puzzle game styles */
+    .puzzle-container {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .question {
+      margin-bottom: 10px;
+    }
+
+    .answer-input {
+      padding: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      padding: 5px 10px;
+      background-color: #3498DB;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your existing service cards and business card -->
+  <!-- ... -->
+
+  <!-- Puzzle Game Container -->
+  <div class="puzzle-container" id="puzzleContainer">
+    <div class="question" id="question">What is the capital of France?</div>
+    <input type="text" class="answer-input" id="answerInput" placeholder="Type your answer">
+    <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <script>
+    // Function to display the puzzle container
+    function showPuzzle() {
+      document.getElementById('puzzleContainer').style.display = 'block';
+    }
+
+    // Function to check the answer and handle the result
+    function checkAnswer() {
+      // Get the user's answer
+      var userAnswer = document.getElementById('answerInput').value.toLowerCase();
+
+      // Check if the answer is correct (You can customize this part based on your specific questions)
+      if (userAnswer === 'paris') {
+        alert('Congratulations! You win 400 rupee services for free.');
+      } else {
+        alert('Sorry, the answer is incorrect. Try again!');
+      }
+
+      // Reset the puzzle container
+      resetPuzzle();
+    }
+
+    // Function to reset the puzzle container
+    function resetPuzzle() {
+      // Hide the puzzle container
+      document.getElementById('puzzleContainer').style.display = 'none';
+
+      // Clear the answer input
+      document.getElementById('answerInput').value = '';
+    }
+  </script>
+</body>
+</html>
